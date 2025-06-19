@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuis Edukasi Kesehatan Mental</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f2f2f2; color: #333; }
+    .quiz-container { max-width: 800px; margin: auto; }
+    .question { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .question h3 { margin: 0 0 10px; }
+    .option { margin: 5px 0; }
+    .feedback { margin-top: 10px; font-style: italic; display: none; padding: 10px; border-radius: 5px; }
+    .correct { color: #155724; background-color: #d4edda; }
+    .wrong { color: #721c24; background-color: #f8d7da; }
+    button { margin-top: 10px; padding: 6px 12px; border: none; border-radius: 4px; background: #007bff; color: white; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container" id="quiz">
+    <h1>Kuis Edukasi: Seberapa Paham Kamu Tentang Kesehatan Mental?</h1>
+    <p><strong>Petunjuk:</strong> Pilih jawaban yang menurutmu benar. Setelah menjawab, kamu akan mengetahui apakah jawabanmu benar beserta penjelasannya.</p>
+
+    <!-- 10 Soal Kuis (dipersingkat di sini untuk kejelasan)-->
+
+    <div class="question" id="q1">
+      <h3>1. Kesehatan mental hanya penting bagi orang yang mengalami gangguan jiwa.</h3>
+      <div class="option"><input type="radio" name="q1" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q1" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q1', 'B', 'Kesehatan mental penting untuk semua orang, bukan hanya mereka yang mengalami gangguan. Mental yang sehat membantu kita menjalani hidup dengan baik.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q1"></div>
+    </div>
+    
+    <div class="question" id="q2">
+      <h3>2. Stres itu normal dan bisa terjadi pada siapa saja.</h3>
+      <div class="option"><input type="radio" name="q2" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q2" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q2', 'A', 'Stres adalah reaksi alami terhadap tekanan. Namun, jika tidak dikelola dengan baik, bisa berdampak negatif.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q2"></div>
+    </div>
+    
+    <div class="question" id="q3">
+      <h3>3. Orang yang terlihat bahagia pasti tidak mengalami depresi.</h3>
+      <div class="option"><input type="radio" name="q3" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q3" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q3', 'B', 'Beberapa orang menyembunyikan depresinya di balik senyuman. Ini disebut smiling depression.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q3"></div>
+    </div>
+    
+    <div class="question" id="q4">
+      <h3>4. Berbicara dengan orang yang dipercaya bisa membantu meringankan beban mental.</h3>
+      <div class="option"><input type="radio" name="q4" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q4" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q4', 'A', 'Dukungan sosial adalah salah satu faktor penting dalam menjaga kesehatan mental.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q4"></div>
+    </div>
+    
+    <div class="question" id="q5">
+      <h3>5. Gangguan kesehatan mental tidak bisa disembuhkan.</h3>
+      <div class="option"><input type="radio" name="q5" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q5" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q5', 'B', 'Banyak gangguan mental bisa diatasi dengan terapi, dukungan, dan pengobatan yang tepat.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q5"></div>
+    </div>
+    
+    <div class="question" id="q6">
+      <h3>6. Overthinking dapat memengaruhi kualitas tidur dan konsentrasi.</h3>
+      <div class="option"><input type="radio" name="q6" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q6" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q6', 'A', 'Overthinking membuat otak sulit beristirahat dan bisa menyebabkan stres serta gangguan tidur.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q6"></div>
+    </div>
+    
+    <div class="question" id="q7">
+      <h3>7. Menjaga kesehatan fisik tidak berpengaruh pada kesehatan mental.</h3>
+      <div class="option"><input type="radio" name="q7" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q7" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q7', 'B', 'Kesehatan fisik dan mental saling berkaitan. Aktivitas fisik dapat memperbaiki suasana hati.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q7"></div>
+    </div>
+    
+    <div class="question" id="q8">
+      <h3>8. Anak-anak dan remaja juga dapat mengalami gangguan kesehatan mental.</h3>
+      <div class="option"><input type="radio" name="q8" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q8" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q8', 'A', 'Gangguan mental tidak mengenal usia. Anak dan remaja juga bisa mengalaminya.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q8"></div>
+    </div>
+    
+    <div class="question" id="q9">
+      <h3>9. Menangis adalah tanda kelemahan emosional.</h3>
+      <div class="option"><input type="radio" name="q9" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q9" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q9', 'B', 'Menangis adalah respon emosional yang normal dan sehat. Itu bukan kelemahan.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q9"></div>
+    </div>
+    
+    <div class="question" id="q10">
+      <h3>10. Pergi ke psikolog berarti seseorang sedang lemah atau gagal menghadapi masalah.</h3>
+      <div class="option"><input type="radio" name="q10" value="A"> A. Benar</div>
+      <div class="option"><input type="radio" name="q10" value="B"> B. Salah</div>
+      <button onclick="checkAnswer('q10', 'B', 'Mencari bantuan ke psikolog adalah langkah berani dan sehat untuk menjaga kondisi mental.')">Cek Jawaban</button>
+      <div class="feedback" id="fb-q10"></div>
+    </div>
+    
+  </div>
+  <script>
+    function checkAnswer(id, correct, explanation) {
+      const options = document.getElementsByName(id);
+      const feedback = document.getElementById("fb-" + id);
+      let selected = null;
+
+      for (let opt of options) {
+        if (opt.checked) {
+          selected = opt.value;
+          break;
+        }
+      }
+
+      if (selected === null) {
+        feedback.innerHTML = "Silakan pilih salah satu jawaban.";
+        feedback.className = "feedback wrong";
+      } else if (selected === correct) {
+        feedback.innerHTML = "✅ Jawaban benar!<br>" + explanation;
+        feedback.className = "feedback correct";
+      } else {
+        feedback.innerHTML = "❌ Jawaban salah.<br>" + explanation;
+        feedback.className = "feedback wrong";
+      }
+
+      feedback.style.display = "block";
+    }
+  </script>
+</body>
+</html>
